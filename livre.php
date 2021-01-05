@@ -8,13 +8,14 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Registe —</title>
+        <title>Enregistrer un livre</title>
     </head>
 
     <body>
 
         <h1>Ajoutez un ouvrage</h1>
-        <form method="POST">
+
+        <form method="POST" class="form">
             <div>
                 <p>Titre</p>
                 <input type="text" name="title" require="">
@@ -39,17 +40,17 @@
         <?php
 
         if (isset($_POST["submit"])) {
-            if (!empty($_POST["author"]) && !empty($_POST["synopsis"]) && !empty($_POST["title"])) {
-                $prep = $DB->prepare("INSERT INTO livre(auteur, resumer, titre) VALUE(?, ?, ?)");
+            if (!empty($_POST["title"]) && !empty($_POST["author"]) && !empty($_POST["synopsis"])) {
+                $prep = $DB->prepare("INSERT INTO livre(titre, auteur, resumer) VALUE(?, ?, ?)");
                 $prep->execute(
                     array(
+                        $_POST["title"],
                         $_POST["author"],
                         $_POST["synopsis"],
-                        $_POST["title"],
                     )
                 );
 
-            } else echo("Remplis moi le cul salope");
+            } else echo("Votre commentaire n'a pas pu être ajouté.");
 
         }
 

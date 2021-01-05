@@ -1,4 +1,3 @@
-
 <?php
 
     include("PHP/DB.php");
@@ -11,24 +10,36 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-    </head>
-    <body>
-        <form method="post">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modifier son nom d'utilisateur</title>
+</head>
+
+<body>
+    <form method="post">
+        <div>
             <p>Nom d'utilisateur</p>
             <input type="text" name="username" id="" value="<?php echo $_SESSION['username']; ?>">
+        </div>
+
+        <div>
             <p>Mot de passe</p>
             <input type="password" name="password">
+        </div>
+
+        <div>
             <p>Confirmez le mot de passe</p>
             <input type="password" name="repeatpassword">
+        </div>
 
+        <div>
             <input type="submit" value="Mettre à jour" name="submit">
-        </form>
+        </div>
+    </form>
 
-        <?php
+    <?php
 
             // Lorsque l'utilisateur clique sur le boutton d'envois
             if (isset($_POST["submit"])) {
@@ -58,5 +69,6 @@
 
 
         ?>
-    </body>
+</body>
+
 </html>

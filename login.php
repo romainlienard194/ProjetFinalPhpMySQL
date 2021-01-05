@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type='text/css' href="site.css">
+    <title>Connexion</title>
 </head>
 
 <body>
     <form method="POST">
-        <p>Votre nom d'utilisateur : </p>
-        <input type="text" name="username">
-
-        <p>Votre mot de passe : </p>
-        <input type="password" name="password">
+        <div>
+            <p>Votre nom d'utilisateur : </p>
+            <input type="text" name="username">
+        </div>
+        
+        <div>
+            <p>Votre mot de passe : </p>
+            <input type="password" name="password">
+        </div>
 
         <p></p>
 
@@ -35,7 +40,7 @@
 
         if((!empty($_POST['password'])) && (!empty($_POST['username']))){
             // Nouvel objet PDO pour initialiser la connection à la BDD
-            $DB = new PDO('mysql:host=localhost; dbname=projetfinal', "root", "");
+            $DB = new PDO('mysql:host=192.168.65.138; dbname=TdFinal_Lienard_Martel', "website", "website");
             // Préparation de la query
             $prep = $DB->prepare("SELECT * FROM membre WHERE login = ? AND pass = ?");
             // Inclusions des arguments de la query
@@ -44,7 +49,7 @@
 
             if ($prep) {
                 $_SESSION['username'] = $prep['login'];
-                header('location:membre.php');
+                header('location:accueil.html');
             } else echo "Nom d'utilisateur ou mot de passe incorrect.";
 
 
