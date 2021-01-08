@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    <nav>
-        <ul>
-            <li class="deroulant"><a href="login.php"> Connexion &ensp;</a></li>
-            <li><a href="livre.php">Ajouter un ouvrage</a></li>
-        </ul>
-    </nav>
+
+<?php 
+    //Menu pour ajouter, supprimer ou accèder à la biblio
+    include ('menu.php'); 
+?>
+
 </body>
 
 </html>

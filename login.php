@@ -14,7 +14,7 @@
             <p>Votre nom d'utilisateur : </p>
             <input type="text" name="username">
         </div>
-        
+
         <div>
             <p>Votre mot de passe : </p>
             <input type="password" name="password">
@@ -47,9 +47,9 @@
             $prep->execute(array($username, $password));
             $prep = $prep->fetch();
 
-            if ($prep) {
+            if($prep) {
                 $_SESSION['username'] = $prep['login'];
-                header('location:accueil.html');
+                header('location:accueil.php');
             } else echo "Nom d'utilisateur ou mot de passe incorrect.";
 
 

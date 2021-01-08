@@ -1,5 +1,5 @@
 html {
-	background-image: url("biblio.jpg");
+	background-image: url("Img/biblio.jpg");
 	background-size: cover;
 }
 
@@ -20,7 +20,7 @@ nav {
 	background-color: white;
 	border: 2px solid;
 	position: sticky;
-	top: 2px;
+	top: 0px;
 }
 
 nav ul {
@@ -49,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-	background-color: #dfff4f;
+	background-color: #ff4f4f;
 }
 
 .sous {
@@ -78,7 +78,7 @@ nav>ul li:hover .sous {
 
 .sous a:hover {
 	border-bottom: none;
-	background-color: #dfff4f;
+	background-color: #ff4f4f;
 }
 
 .deroulant>a::after {
@@ -121,4 +121,42 @@ nav>ul li:hover .sous {
 	background:#3646d3;
 	font:bold 32px Arial;
 	color:#fff;
+}
+
+.Book_Img {
+	height: 300px;
+	width: 200px;
+}
+
+.Books_Icon{
+	border: solid black 2px;
+	width: max-content;
+	padding: 1%;
+	margin: 2% 3%;
+	display: inline-block;
+	border-radius: 10px;
+}
+
+.Synopsis{
+	width: 50%;
+	margin: 3% auto;
+}
+
+.add_book{
+	padding: 2%;
+}
+
+h5 {
+	color: red;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.DeleteBookList {
+	border: solid black 2px;
+	width: max-content;
+	padding: 0% 1.5%;
+	display: inline-block;
+	margin: 2%;
+	border-radius: 10px;
 }
